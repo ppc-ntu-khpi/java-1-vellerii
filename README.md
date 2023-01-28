@@ -32,18 +32,64 @@ public class Customer {
 
 ![alt-текст](https://github.com/ppc-ntu-khpi/java-1-vellerii/blob/main/Solution/done.png "done.png")
 
+## Виконання завдання на "п'ять" 5️⃣
+Потрібно було змінити код класу наступним чином:
+  * додати **конструктор за замовчуванням**, який ініціалізує атрибути початковими значеннями;
+  * додати **методи для зміни атрибутів** - ````setID````, ````setStatus````, ````setTotal```` з відповідними параметрами та перевіркою присвоюваних значень;
+  * **використати ці методи** в методі в методі ````main```` класу````CustomerTest````.
+  
+  Програмний код після змін і результат запуска коду наведені нижче.
+  ``` java
+  package domain;
 
+public class Customer {
+    private int ID;
+    private boolean isNew;
+    private float total;
+    
+    public Customer() {
+       ID = 16061;
+       isNew = true;
+       total = 720.4F;
+    }
 
-:triangular_flag_on_post: **УВАГА!** Ваша оцінка залежить від того, що саме було вами зроблено:
-* на "**три**" - просто виконані перелічені вище завдання
-* на "**чотири**" - те, що на "три", плюс, добре оформлений файл змініть файл ````README.md````  - з кодом класу ```` Сustomer ```` та скріншотом роботи програми
-* на "**п'ять**" - те, що на "чотири", плюс, змінити код класу наступним чином:
-  * додати **конструктор за замовчуванням**, який ініціалізує атрибути початковими значеннями (див. відеозапис лекції) 
-  * додати **методи для зміни атрибутів** - ````setID````, ````setStatus````, ````setTotal```` з відповідними параметрами та перевіркою присвоюваних значень (можуть або нічого не повертати, або повертати булевське значення, див. відеозапис лекції). 
-**Підказка:** натисніть в Netbeans <kbd>Alt</kbd> + <kbd>Insert</kbd> і оберіть пункт "Getter and Setter..." - Netbeans напише все замість вас!
-![](https://github.com/ppc-ntu-khpi/Class-Starter/raw/main/images/GetterAndSetter.png)
-  * **використати ці методи** в методі в методі ````main```` класу````CustomerTest````
-  * зробити та зберегти (тека **Solution**) у файл ````advanced.png```` **скріншот** результатів роботи програми, та модифікувати файл ````README.md````відповідним чином
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        if (ID >= 0) {
+             this.ID = ID;
+        }
+    }
+
+    public boolean getStatus() {
+        return isNew;
+    }
+
+    public void setStatus(boolean isNew) {
+        this.isNew = isNew;
+    }
+
+    public float getTotal() {
+        return total;
+    }
+
+    public void setTotal(float total) {
+        if (total >= 0) {
+           this.total = total;
+        }
+    }
+
+    public void displayCustomerInfo() {
+        System.out.println("Customer ID: " + ID);
+        System.out.println("Is the customer new: " + isNew);
+        System.out.println("Total purchases are: " + total);
+    }
+}
+```
+![alt-текст](https://github.com/ppc-ntu-khpi/java-1-vellerii/blob/main/Solution/advanced.png "advanced.png")
+
 
 
 
